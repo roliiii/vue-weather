@@ -1,6 +1,6 @@
 <template>
   <div v-if="apiKey == ''">
-    <p class='settingsLink' @click="routeToSettings" >Kérlek állítsd be az api key-t a settings-en</p>
+    <p class='settingsLink' @click="routeToSettings" >Kérlek állítsd be az api key-t a settings-ben</p>
   </div>
   <div v-else>
     <WeatherForm />
