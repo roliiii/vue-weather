@@ -1,6 +1,6 @@
 <template>
   <div>
-      <form @submit="getWeather">
+      <form @submit.prevent="getWeather">
           <input type="text" name="country" v-model="country">
           <input type="submit" value="Submit">
       </form>
@@ -15,8 +15,7 @@ export default {
         }
     }, 
     methods: {
-        getWeather(e) {
-            e.preventDefault()
+        getWeather() {
             this.$store.dispatch("fetchWeatherData", this.country)
         }
     },
