@@ -3,7 +3,7 @@
     <p class='settingsLink' @click="routeToSettings" >Kérlek állítsd be az api key-t a settings-ben</p>
   </div>
   <div v-else>
-    <WeatherForm />
+    <weather-form />
     <weather v-if="isWeatherDataAvailable" />
     <div v-else-if="error!=''">{{error}}</div>
   </div>

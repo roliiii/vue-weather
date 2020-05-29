@@ -18,7 +18,7 @@ export default new Vuex.Store({
     setCountry (state, country) {
       state.country = country
     },
-    weatherData (state, weatherData) {
+    setWeatherData (state, weatherData) {
       state.weatherData = weatherData
     },
   },
@@ -26,7 +26,7 @@ export default new Vuex.Store({
     fetchWeatherData (context, country){
       const params = {query:country, access_key:this.state.key}
       Axios.get("http://api.weatherstack.com/current", {params})
-      .then(res => context.commit('weatherData', res.data))
+      .then(res => context.commit('setWeatherData', res.data))
       .catch(err => {console.log(err)})
     }
   },

@@ -10,10 +10,6 @@
 <script>
 export default {
     name: 'WeatherForm',
-    data() {
-        return {
-        }
-    }, 
     methods: {
         getWeather() {
             this.$store.dispatch("fetchWeatherData", this.country)
