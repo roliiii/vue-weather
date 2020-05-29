@@ -5,7 +5,7 @@
   <div v-else>
     <weather-form />
     <weather v-if="isWeatherDataAvailable" />
-    <div v-else-if="error!=''">{{error}}</div>
+    <div v-else-if="errorHappened">{{error}}</div>
   </div>
 </template>
 
@@ -31,7 +31,10 @@ export default {
       apiKey: 'getKey',
       isWeatherDataAvailable: 'isWeatherDataAvailable',
       error: 'getError'
-    })
+    }),
+    errorHappened(){
+      return this.error!=''
+    } 
   }
 }
 </script>
