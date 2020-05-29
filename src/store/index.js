@@ -4,6 +4,10 @@ import Axios from 'axios'
 
 Vue.use(Vuex)
 
+const api = Axios.create({
+  baseURL:'http://api.weatherstack.com'
+})
+
 export default new Vuex.Store({
   state: {
     country: '',
@@ -25,7 +29,7 @@ export default new Vuex.Store({
   actions: {
     fetchWeatherData (context, country){
       const params = {query:country, access_key:this.state.key}
-      Axios.get("http://api.weatherstack.com/current", {params})
+      api.get("current", {params})
       .then(res => context.commit('setWeatherData', res.data))
       .catch(err => {console.log(err)})
     }
